@@ -1,7 +1,7 @@
 const genislet = document.getElementById("genislet");
 const oynat = document.getElementById("oynatma-butonu");
 const ayarlar = document.getElementById("ayarlar");
-const inputs = document.getElementsByClassName("ayar");
+const inputs = document.getElementsByClassName("input");
 const selectElements = document.getElementsByClassName("select-element");
 const rootElement = document.querySelector("html");
 rootElement.style.setProperty("--animation-play-state", "paused");
