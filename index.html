@@ -13,8 +13,8 @@
     </section>
 
     <section class="ayarlar" id="ayarlar">
-      <div class="oynatma-butonu" id="oynatma-butonu"></div>
-      <div id="genislet"></div>
+      <div class="oynatma-butonu" id="oynatma-butonu" title="oynat/durdur"></div>
+      <div id="genislet" title="ayarlar"></div>
       <ul class="ayarlar__liste">
         <li class="ayarlar__liste-itemi">
           <label for="--animation-name">Animation Name</label>
@@ -28,7 +28,7 @@
         </li>
 
         <li class="ayarlar__liste-itemi">
-          <label for="--animation-duration">Animation Duration</label>
+          <label for="--animation-duration" title="animasyon süresi">Animation Duration(s)</label>
           <input
             type="number"
             id="--animation-duration"
@@ -38,12 +38,12 @@
         </li>
 
         <li class="ayarlar__liste-itemi">
-          <label for="--animation-delay">Animation Delay</label>
+          <label for="--animation-delay" title="animasyon gecikme süresi">Animation Delay(s)</label>
           <input type="number" id="--animation-delay" class="ayar" value="0" />
         </li>
 
         <li class="ayarlar__liste-itemi">
-          <label for="--animation-timing-function"
+          <label for="--animation-timing-function" title="animasyon zamanlama fonksiyonu"
             >Animation Timing Function</label
           >
           <select id="--animation-timing-function" class="ayar select-element">
@@ -60,7 +60,7 @@
         </li>
 
         <li class="ayarlar__liste-itemi">
-          <label for="--animation-iteration-count"
+          <label for="--animation-iteration-count" title="animasyon tekrar sayısı"
             >Animation Iteration Count</label
           >
           <select id="--animation-iteration-count" class="ayar select-element">
@@ -74,7 +74,7 @@
         </li>
 
         <li class="ayarlar__liste-itemi">
-          <label for="--animation-direction">Animation Direction</label>
+          <label for="--animation-direction" title="animasyon çalışma yönü">Animation Direction</label>
           <select id="--animation-direction" class="ayar select-element">
             <option value="normal">normal</option>
             <option value="reverse">reverse</option>
@@ -84,7 +84,7 @@
         </li>
 
         <li class="ayarlar__liste-itemi">
-          <label for="--animation-fill-mode">Animation Fill Mode</label>
+          <label for="--animation-fill-mode" title="karelerin elemanı etkileme şekli">Animation Fill Mode</label>
           <select id="--animation-fill-mode" class="ayar select-element">
             <option value="none">none</option>
             <option value="forwards">forwards</option>
