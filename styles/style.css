@@ -76,7 +76,7 @@ body {
   left: 50%;
   top: -4rem;
   background-color: var(--color-yellow);
-  background-image: url("/up-arrow.png");
+  background-image: url("/img/up-arrow.png");
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: center;
@@ -84,17 +84,17 @@ body {
 }
 
 #genislet.genislet{
-    background-image: url("/down-arrow.png");
+    background-image: url("/img/down-arrow.png");
 }
 
 .oynatma-butonu{
     right: 50%;
     left: auto;
-    background-image: url("/play.png");
+    background-image: url("/img/play.png");
 }
 
 .oynatma-butonu.oynat{
- background-image: url("/stop.png");
+ background-image: url("/img/stop.png");
 }
 
 

@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script src="/scripts/menu.js" defer></script>
+    <script src="/scripts/animation.js" defer></script>
     <title>Animasyon Özellikleri</title>
   </head>
   <body>
@@ -17,9 +19,15 @@
       <div id="genislet" title="ayarlar"></div>
       <label for="menu">Menu</label>
       <select id="menu">
-        <option value="animasyon" selected>Animasyon Özellikleri</option>
+        <option value="transform">Transform Özellikleri</option>
+        <option value="animasyon">Animasyon Özellikleri</option>
       </select>
       <div class="container">
+        <ul class="ayarlar__liste transform">
+          <li class="ayarlar__liste-itemi">
+            <label for="--transform"></label>
+          </li>
+        </ul>
         <ul class="ayarlar__liste animasyon">
           <li class="ayarlar__liste-itemi">
             <label for="--animation-name" title="animasyon ismi">Animation Name</label>
@@ -94,6 +102,5 @@
         </ul>
       </div>
     </section>
-    <script src="/script.js"></script>
   </body>
 </html>

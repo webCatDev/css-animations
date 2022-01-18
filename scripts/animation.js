@@ -25,7 +25,12 @@ oynat.addEventListener("click", () => {
 
 for (const input of inputs) {
   input.addEventListener("change", (e) => {
-    rootElement.style.setProperty(`${e.target.id}`, `${e.target.value}s`);
+
+   
+      rootElement.style.setProperty(
+        `${e.target.id}`,
+        `${e.target.value}s`
+      );
   });
 }
 
@@ -37,13 +42,3 @@ for (const selectElement of selectElements) {
   });
 }
 
-
-document.getElementsByClassName("animasyon")[0].style.left="0"
- menu.addEventListener("change", (e) => {
-   
-   let menuValue =
-     menu.options[menu.selectedIndex].value;
-   let selectedMenu=document.getElementsByClassName(`${menuValue}`)
-   console.log(selectedMenu)
-   selectedMenu.style.left="0"
- });
