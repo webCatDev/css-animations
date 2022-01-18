@@ -1,5 +1,6 @@
 const genislet = document.getElementById("genislet");
 const oynat = document.getElementById("oynatma-butonu");
+const menu = document.getElementById("menu");
 const ayarlar = document.getElementById("ayarlar");
 const inputs = document.getElementsByClassName("input");
 const selectElements = document.getElementsByClassName("select-element");
@@ -35,3 +36,14 @@ for (const selectElement of selectElements) {
     rootElement.style.setProperty(`${e.target.id}`, selectElementValue);
   });
 }
+
+
+document.getElementsByClassName("animasyon")[0].style.left="0"
+ menu.addEventListener("change", (e) => {
+   
+   let menuValue =
+     menu.options[menu.selectedIndex].value;
+   let selectedMenu=document.getElementsByClassName(`${menuValue}`)
+   console.log(selectedMenu)
+   selectedMenu.style.left="0"
+ });
