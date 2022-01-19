@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/style.css" />
     <script src="/scripts/menu.js" defer></script>
     <script src="/scripts/animation.js" defer></script>
+    <script src="/scripts/transform.js" defer></script>
     <title>Animasyon Özellikleri</title>
   </head>
   <body>
@@ -19,13 +20,15 @@
       <div id="genislet" title="ayarlar"></div>
       <label for="menu">Menu</label>
       <select id="menu">
-        <option value="transform">Transform Özellikleri</option>
+        <option value="transform-liste">Transform Özellikleri</option>
         <option value="animasyon">Animasyon Özellikleri</option>
       </select>
       <div class="container">
-        <ul class="ayarlar__liste transform">
+        <ul class="ayarlar__liste transform-liste">
           <li class="ayarlar__liste-itemi">
-            <label for="--transform"></label>
+            <label>translate(x,y)</label>
+            <input type="number" class="transform">
+            <input type="number" class="transform">
           </li>
         </ul>
         <ul class="ayarlar__liste animasyon">

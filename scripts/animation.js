@@ -1,6 +1,5 @@
 const genislet = document.getElementById("genislet");
 const oynat = document.getElementById("oynatma-butonu");
-const menu = document.getElementById("menu");
 const ayarlar = document.getElementById("ayarlar");
 const inputs = document.getElementsByClassName("input");
 const selectElements = document.getElementsByClassName("select-element");
