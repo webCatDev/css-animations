@@ -12,3 +12,5 @@ change settings of animation and see what it does.
 - rotate
 - scale up
 
+This site is live at [CSS Animasyonlari](https://css-animasyonlar.netlify.app)
+
