@@ -13,22 +13,21 @@
 html {
   font-size: 62.5%;
 
-  --animation-name: zıpla;
+  --animation-name: bounce;
   --animation-duration: 1s;
   --animation-delay: 0s;
   --animation-timing-function: ease-in-out;
   --animation-iteration-count: infinite;
   --animation-play-state: paused;
   --animation-direction: alternate;
-   --animation-fill-mode: none;
-
+  --animation-fill-mode: none;
   --color-black: #191c1e;
   --color-yellow: hsl(39, 98%, 68%);
   --color-white: hsl(39, 98%, 95%);
 }
 
 body {
-    font-size: 2rem;
+  font-size: 2rem;
   width: 100%;
   min-height: 100vh;
   background-color: var(--color-black);
@@ -46,18 +45,22 @@ body {
   align-items: center;
 }
 
-
-
-#kutu {
+#box {
   position: relative;
   width: 7rem;
   height: 7rem;
   background-color: var(--color-white);
-  animation: var(--animation-name) var(--animation-duration) var(--animation-timing-function) var(--animation-iteration-count) var(--animation-direction) var(--animation-play-state) var(--animation-delay) var(--animation-fill-mode) ;
-  -webkit-animation: var(--animation-name) var(--animation-duration) var(--animation-timing-function) var(--animation-iteration-count) var(--animation-direction) var(--animation-play-state) var(--animation-delay) var(--animation-fill-mode) ;
+  animation: var(--animation-name) var(--animation-duration)
+    var(--animation-timing-function) var(--animation-iteration-count)
+    var(--animation-direction) var(--animation-play-state)
+    var(--animation-delay) var(--animation-fill-mode);
+  -webkit-animation: var(--animation-name) var(--animation-duration)
+    var(--animation-timing-function) var(--animation-iteration-count)
+    var(--animation-direction) var(--animation-play-state)
+    var(--animation-delay) var(--animation-fill-mode);
 }
 
-.ayarlar {
+.settings {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -67,9 +70,11 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: var(--color-yellow);
+  transition: height 300ms ease-in-out;
 }
 
-#genislet, .oynatma-butonu {
+#expand-btn,
+.play-btn {
   position: absolute;
   width: 6rem;
   height: 4rem;
@@ -83,34 +88,34 @@ body {
   cursor: pointer;
 }
 
-#genislet.genislet{
-    background-image: url("/img/down-arrow.png");
+#expand-btn.expanded {
+  background-image: url("/img/down-arrow.png");
 }
 
-.oynatma-butonu{
-    right: 50%;
-    left: auto;
-    background-image: url("/img/play.png");
+.play-btn {
+  right: 50%;
+  left: auto;
+  background-image: url("/img/play.png");
 }
 
-.oynatma-butonu.oynat{
- background-image: url("/img/stop.png");
+.play-btn.play {
+  background-image: url("/img/stop.png");
 }
 
-
-#genislet:hover, .oynatma-butonu:hover {
+#expand-btn:hover,
+.play-btn:hover {
   background-color: var(--color-white);
 }
 
-.ayarlar.genislet {
+.settings.expanded {
   height: 40rem;
 }
 
-label[for="menu"]{
+label[for="menu"] {
   margin-top: 2rem;
 }
 
-#menu{
+#menu {
   text-align: center;
   display: inline-block;
   padding: 1rem 0 1rem 2rem;
@@ -119,29 +124,30 @@ label[for="menu"]{
   border-radius: 2px;
 }
 
-.container{
+.container {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.ayarlar__liste {
+.settings__list {
   list-style: none;
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0%;
   width: 100%;
   height: 100%;
   text-align: center;
   overflow-y: scroll;
 }
 
-.ayarlar__liste-itemi {
+.settings__list-item {
   margin: 2rem auto;
   max-width: 30rem;
 }
 
-.input, .select-element {
+.input,
+.select-element {
   text-align: center;
   display: inline-block;
   width: 100%;
@@ -151,99 +157,95 @@ label[for="menu"]{
   border-radius: 2px;
 }
 
-label{
-    display: block;
-    margin-bottom: .5rem;
+label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
+@keyframes bounce {
+  0% {
+    bottom: 0;
+  }
 
-@keyframes zıpla {
-    0%{
-        bottom: 0;
-    }
+  25% {
+    bottom: 5rem;
+  }
 
-    25%{
-        bottom: 5rem;
-    }
+  50% {
+    bottom: 0;
+  }
 
-    50%{
-        bottom: 0;
-    }
-
-    75%{
-        bottom: 3rem;
-    }
-    100%{
-        bottom: 0;
-    }
-    
+  75% {
+    bottom: 3rem;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 
+@keyframes colorChange {
+  0% {
+    background-color: var(--color-yellow);
+  }
 
-@keyframes renkDegis {
-    0%{
-        background-color: var(--color-yellow);
-    }
+  25% {
+    background-color: var(--color-white);
+  }
 
-    25%{
-        background-color: var(--color-white);
-    }
+  50% {
+    background-color: rgb(11, 172, 17);
+  }
 
-    50%{
-        background-color: rgb(11, 172, 17);
-    }
-
-    75%{
-        background-color: rgb(11, 172, 164);
-    }
-    100%{
-        background-color: rgb(78, 11, 172);
-    }
-    
+  75% {
+    background-color: rgb(11, 172, 164);
+  }
+  100% {
+    background-color: rgb(78, 11, 172);
+  }
 }
 
-@keyframes kaybol{
-    from{
-        opacity: 0;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-    to{
-        opacity:1;
-    }
-}
-
-@keyframes dondur{
-    from{
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
+  to {
+    opacity: 1;
+  }
 }
 
-    to{
-        transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
 }
 
-@keyframes buyult{
-    from{
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-}
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
 
-    to{
-        transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        -moz-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-        -o-transform: scale(1.5);
-}
+  to {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+  }
 }

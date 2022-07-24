@@ -1,0 +1,27 @@
+{
+  "name": "css-animations",
+  "version": "1.0.0",
+  "description": "Learn CSS animations",
+  "source": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webCatDev/css-animations.git"
+  },
+  "keywords": [
+    "CSS"
+  ],
+  "author": "Hamza Essiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webCatDev/css-animations/issues"
+  },
+  "homepage": "https://github.com/webCatDev/css-animations#readme",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}

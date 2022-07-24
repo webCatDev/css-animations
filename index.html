@@ -5,61 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/style.css" />
-    <script src="/scripts/menu.js" defer></script>
     <script src="/scripts/animation.js" defer></script>
-    <script src="/scripts/transform.js" defer></script>
-    <title>Animasyon Özellikleri</title>
+    <title>Animation Properties</title>
   </head>
   <body>
-    <section class="main">
-      <div class="basit-kutu" id="kutu"></div>
-    </section>
+    <main class="main">
+      <div class="basit-kutu" id="box"></div>
+    </main>
 
-    <section class="ayarlar" id="ayarlar">
-      <div class="oynatma-butonu" id="oynatma-butonu" title="oynat/durdur"></div>
-      <div id="genislet" title="ayarlar"></div>
-      <label for="menu">Menu</label>
-      <select id="menu">
-        <option value="transform-liste">Transform Özellikleri</option>
-        <option value="animasyon">Animasyon Özellikleri</option>
-      </select>
+    <!-- MENU BUTTONS -->
+    <section class="settings" id="settings">
+      <button class="play-btn" id="play-btn" title="play/pause"></button>
+      <button id="expand-btn" title="settings"></button>
+
       <div class="container">
-        <ul class="ayarlar__liste transform-liste">
-          <li class="ayarlar__liste-itemi">
-            <label>translate(x,y)</label>
-            <input type="number" class="transform">
-            <input type="number" class="transform">
-          </li>
-        </ul>
-        <ul class="ayarlar__liste animasyon">
-          <li class="ayarlar__liste-itemi">
-            <label for="--animation-name" title="animasyon ismi">Animation Name</label>
-            <select id="--animation-name" class="select-element">
-              <option value="zıpla">Zıpla</option>
-              <option value="renkDegis">Renk Değiş</option>
-              <option value="kaybol">Yanıp Sönme</option>
-              <option value="dondur">Döndür</option>
-              <option value="buyult">Büyült</option>
+        <ul class="settings__list animation">
+          <li class="settings__list-item">
+            <label for="animation-name" title="animation name"
+              >Animation Name</label
+            >
+            <select
+              id="animation-name"
+              data-animation-property="--animation-name"
+              class="select-element"
+            >
+              <option value="bounce">bounce</option>
+              <option value="colorChange">color change</option>
+              <option value="fadeIn">fade in/out</option>
+              <option value="rotate">rotate</option>
+              <option value="scaleUp">scale up</option>
             </select>
           </li>
-          <li class="ayarlar__liste-itemi">
-            <label for="--animation-duration" title="animasyon süresi">Animation Duration(s)</label>
+          <li class="settings__list-item">
+            <label for="animation-duration" title="animation duration"
+              >Animation Duration(s)</label
+            >
             <input
               type="number"
-              id="--animation-duration"
+              id="animation-duration"
+              data-animation-property="--animation-duration"
               class="input"
               value="1"
             />
           </li>
-          <li class="ayarlar__liste-itemi">
-            <label for="--animation-delay" title="animasyon gecikme süresi">Animation Delay(s)</label>
-            <input type="number" id="--animation-delay" class="input" value="0" />
+          <li class="settings__list-item">
+            <label for="animation-delay" title="animation delay"
+              >Animation Delay(s)</label
+            >
+            <input
+              type="number"
+              id="animation-delay"
+              data-animation-property="--animation-delay"
+              class="input"
+              value="0"
+            />
           </li>
-          <li class="ayarlar__liste-itemi">
-            <label for="--animation-timing-function" title="animasyon zamanlama fonksiyonu"
+          <li class="settings__list-item">
+            <label
+              for="animation-timing-function"
+              title="animation timing function"
               >Animation Timing Function</label
             >
-            <select id="--animation-timing-function" class="select-element">
+            <select
+              id="animation-timing-function"
+              data-animation-property="--animation-timing-function"
+              class="select-element"
+            >
               <option value="ease">ease</option>
               <option value="ease-in">ease-in</option>
               <option value="ease-out">ease-out</option>
@@ -71,11 +82,17 @@
               </option>
             </select>
           </li>
-          <li class="ayarlar__liste-itemi">
-            <label for="--animation-iteration-count" title="animasyon tekrar sayısı"
+          <li class="settings__list-item">
+            <label
+              for="animation-iteration-count"
+              title="animation iteration count"
               >Animation Iteration Count</label
             >
-            <select id="--animation-iteration-count" class="select-element">
+            <select
+              id="animation-iteration-count"
+              data-animation-property="--animation-iteration-count"
+              class="select-element"
+            >
               <option value="infinite">infinite</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -84,18 +101,30 @@
               <option value="5">5</option>
             </select>
           </li>
-          <li class="ayarlar__liste-itemi">
-            <label for="--animation-direction" title="animasyon çalışma yönü">Animation Direction</label>
-            <select id="--animation-direction" class="select-element">
+          <li class="settings__list-item">
+            <label for="animation-direction" title="animation direction"
+              >Animation Direction</label
+            >
+            <select
+              id="animation-direction"
+              data-animation-property="--animation-direction"
+              class="select-element"
+            >
               <option value="normal">normal</option>
               <option value="reverse">reverse</option>
               <option value="alternate">alternate</option>
               <option value="alternate-reverse">alternate-reverse</option>
             </select>
           </li>
-          <li class="ayarlar__liste-itemi">
-            <label for="--animation-fill-mode" title="karelerin elemanı etkileme şekli">Animation Fill Mode</label>
-            <select id="--animation-fill-mode" class="select-element">
+          <li class="settings__list-item">
+            <label for="animation-fill-mode" title="animation fill mode"
+              >Animation Fill Mode</label
+            >
+            <select
+              id="animation-fill-mode"
+              data-animation-property="--animation-fill-mode"
+              class="select-element"
+            >
               <option value="none">none</option>
               <option value="forwards">forwards</option>
               <option value="backwards">backwards</option>

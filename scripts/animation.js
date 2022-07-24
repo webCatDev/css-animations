@@ -1,43 +1,26 @@
-const genislet = document.getElementById("genislet");
-const oynat = document.getElementById("oynatma-butonu");
-const ayarlar = document.getElementById("ayarlar");
-const inputs = document.getElementsByClassName("input");
-const selectElements = document.getElementsByClassName("select-element");
-const rootElement = document.querySelector("html");
+"use strict";
+var expandButton = document.getElementById("expand-btn");
+var playButton = document.getElementById("play-btn");
+var settings = document.getElementById("settings");
+var rootElement = document.querySelector("html");
 rootElement.style.setProperty("--animation-play-state", "paused");
-
-genislet.addEventListener("click", () => {
-  ayarlar.classList.toggle("genislet");
-  genislet.classList.toggle("genislet");
-});
-
-oynat.addEventListener("click", () => {
-  if (
-    rootElement.style.getPropertyValue("--animation-play-state") === "paused"
-  ) {
-    rootElement.style.setProperty("--animation-play-state", "running");
-  } else {
-    rootElement.style.setProperty("--animation-play-state", "paused");
-  }
-  oynat.classList.toggle("oynat");
-});
-
-for (const input of inputs) {
-  input.addEventListener("change", (e) => {
-
-   
-      rootElement.style.setProperty(
-        `${e.target.id}`,
-        `${e.target.value}s`
-      );
-  });
+function expandMenu() {
+    settings.classList.toggle("expanded");
+    expandButton.classList.toggle("expanded");
 }
-
-for (const selectElement of selectElements) {
-  selectElement.addEventListener("change", (e) => {
-    let selectElementValue =
-      selectElement.options[selectElement.selectedIndex].value;
-    rootElement.style.setProperty(`${e.target.id}`, selectElementValue);
-  });
+function toogleAnimationPlayingState() {
+    var property = "--animation-play-state";
+    rootElement.style.getPropertyValue(property) === "paused"
+        ? rootElement.style.setProperty(property, "running")
+        : rootElement.style.setProperty(property, "paused");
+    playButton.classList.toggle("play");
 }
-
+function setAnimationProperties(event) {
+    var target = event.target;
+    var animationProperty = target.dataset.animationProperty;
+    var tagName = target.tagName, value = target.value;
+    rootElement.style.setProperty(animationProperty, "".concat(tagName === "INPUT" ? "".concat(value, "s") : tagName === "SELECT" ? value : ""));
+}
+expandButton.addEventListener("click", expandMenu);
+playButton.addEventListener("click", toogleAnimationPlayingState);
+settings.addEventListener("change", setAnimationProperties);

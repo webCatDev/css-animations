@@ -1,6 +1,14 @@
-##CSS Animations
-CSS Animations are so good to not know.
+## CSS ANIMATIONS
 
-#Animasyonlar
+In this project, i learned a lot about **CSS animations** 
+You can see my project online at bla bla
+You can try custom animation i prepared for you, 
+change settings of animation and see what it does.
 
-Bu sitede 5 farklı animasyonu farklı animasyon özelliklerinde çalıştırıp animasyon özelliklerini inceleyebilirsiniz.
+## Animation List 
+- bounce
+- color change
+- fade in/out
+- rotate
+- scale up
+
